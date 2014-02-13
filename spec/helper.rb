@@ -5,7 +5,9 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
   SimpleCov::Formatter::HTMLFormatter,
   Coveralls::SimpleCov::Formatter
 ]
+
 SimpleCov.start
+Coveralls.wear!
 
 require 'minitest/autorun'
 require 'java-properties'

@@ -1,5 +1,10 @@
 # JavaProperties
 
+[![Build Status](http://img.shields.io/travis/jnbt/java-properties.png)](https://travis-ci.org/jnbt/jnbt/java-properties)
+[![Code Climate](http://img.shields.io/codeclimate/github/jnbt/java-properties.png)](https://codeclimate.com/github/jnbt/java-properties)
+[![Coveralls](http://img.shields.io/coveralls/jnbt/java-properties.png)](https://coveralls.io/r/jnbt/java-properties)
+[![RubyGems](http://img.shields.io/gem/v/java-properties.png)](http://rubygems.org/gems/java-properties)
+
 A ruby library to read and write [Java properties files](http://en.wikipedia.org/wiki/.properties).
 
 ## Installation
