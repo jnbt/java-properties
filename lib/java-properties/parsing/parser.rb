@@ -11,8 +11,9 @@ module JavaProperties
 
       # Marker for separation between keys and values
       # after normalization
-      # @return [Regexp]
-      KEY_VALUE_MARKER = /^([^=]*)=(.*)$/
+      # @return [String]
+      KEY_VALUE_MARKER = '='
+      KEY_ESCAPE = '\\'
 
       # Marker for a line which only consists of an key w/o value
       # @return [Regexp]
@@ -25,7 +26,7 @@ module JavaProperties
         properties = Properties.new
         Normalizer.normalize!(text)
         text.each_line do |line|
-          key, value = extract_key_and_value(line)
+          key, value = extract_key_and_value(line.chomp)
           append_to_properties(properties, key, value)
         end
         properties
@@ -34,18 +35,25 @@ module JavaProperties
       private 
 
       def self.extract_key_and_value(line)
-        if line =~ KEY_VALUE_MARKER
-          [$1, $2]
-        elsif line =~ KEY_ONLY_MARKER
-          [$1, '']
-        else
-          [nil, nil]
+        # A line must be handled char by char to handled escaped '=' chars in the key name
+        key          = StringIO.new
+        value        = StringIO.new
+        key_complete = false
+        last_token   = ''
+        line.each_char do |char|
+          if !key_complete && char == KEY_VALUE_MARKER && last_token != KEY_ESCAPE
+            key_complete = true
+          else
+            (key_complete ? value : key) << char
+          end
+          last_token = char
         end
+        [key.string, value.string]
       end
 
       def self.append_to_properties(properties, key, value)
         unless key.nil? && value.nil?
-          properties[Encoding.decode!(key).to_sym] = Encoding.decode!(value)
+          properties[Encoding.decode!(key).to_sym] = Encoding.decode!(value, Encoding::SKIP_SEPARATORS)
         end
       end
 
