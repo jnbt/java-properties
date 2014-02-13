@@ -1,3 +1,4 @@
+# coding: utf-8
 require 'helper'
 
 describe JavaProperties::Generating::Generator do
