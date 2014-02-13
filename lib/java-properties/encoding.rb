@@ -6,9 +6,9 @@ module JavaProperties
   # Module to encode and decode
   module Encoding
 
-    def self.encode!(text)
+    def self.encode!(text, is_value = false)
       SpecialChars.encode!(text)
-      Separators.encode!(text)
+      Separators.encode!(text) unless is_value
       Unicode.encode!(text)
       text
     end
