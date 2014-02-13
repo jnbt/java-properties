@@ -1,6 +1,23 @@
 module JavaProperties
   module Parsing
     # Module to normalize the content of a properties file
+    # 
+    # @example Normalizes:
+    #   # Comment 1
+    #   ! Comment 2
+    #   item0
+    #   item1 = item1 
+    #   item2 : item2 
+    #   item3=line 1 \
+    #         line 2
+    #
+    # @example Into:
+    #
+    #   item0
+    #   item1=item1 
+    #   item2=item2 
+    #   item3=line 1 line 2
+    #
     module Normalizer
 
       # Describes a single normalization rule by replacing content
@@ -12,7 +29,7 @@ module JavaProperties
           @replacement = replacement
         end
 
-        # Apply the substitution to the text
+        # Apply the substitution to the text in place
         # @param text [string]
         # @return [String]
         def apply!(text)

@@ -1,10 +1,26 @@
+# coding: utf-8
 module JavaProperties
   module Parsing
+    # This module allows parsing of a properties file content string
+    # into a {Properties} object
+    #
+    # @example
+    #   Parser.parse("item=something \u05d4") => {:item => "something ה"}
+    #
     module Parser
 
+      # Marker for separation between keys and values
+      # after normalization
+      # @return [Regexp]
       KEY_VALUE_MARKER = /^([^=]*)=(.*)$/
+
+      # Marker for a line which only consists of an key w/o value
+      # @return [Regexp]
       KEY_ONLY_MARKER  = /^(\S+)$/
 
+      # Parses a string into a {Properties} object
+      # @param text [String]
+      # @return [Properties]
       def self.parse(text)
         properties = Properties.new
         Normalizer.normalize!(text)

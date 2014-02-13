@@ -6,17 +6,37 @@ module JavaProperties
   # Module to encode and decode
   module Encoding
 
-    def self.encode!(text, is_value = false)
-      SpecialChars.encode!(text)
-      Separators.encode!(text) unless is_value
-      Unicode.encode!(text)
+    # Flag for skipping separators encodings / decoding
+    # @return [Symbol]
+    SKIP_SEPARATORS=:skip_separators
+
+    # Flag for skipping separators encodings / decoding
+    # @return [Symbol]
+    SKIP_UNICODE=:skip_unicode
+
+    # Flag for skipping separators encodings / decoding
+    # @return [Symbol]
+    SKIP_SPECIAL_CHARS=:skip_special_chars
+
+    # Encode a given text in place
+    # @param text [String]
+    # @param flags Optional flags to skip encoding steps
+    # @return [String]
+    def self.encode!(text, *flags)
+      SpecialChars.encode!(text)  unless flags.include?(SKIP_SPECIAL_CHARS)
+      Separators.encode!(text)    unless flags.include?(SKIP_SEPARATORS)
+      Unicode.encode!(text)       unless flags.include?(SKIP_UNICODE)
       text
     end
     
-    def self.decode!(text)
-      Unicode.decode!(text)
-      Separators.decode!(text)
-      SpecialChars.decode!(text)
+    # Decodes a given text in place
+    # @param text [String]
+    # @param flags Optional flags to skip decoding steps
+    # @return [String]
+    def self.decode!(text, *flags)
+      Unicode.decode!(text)       unless flags.include?(SKIP_UNICODE)
+      Separators.decode!(text)    unless flags.include?(SKIP_SEPARATORS)
+      SpecialChars.decode!(text)  unless flags.include?(SKIP_SPECIAL_CHARS)
       text
     end
 
