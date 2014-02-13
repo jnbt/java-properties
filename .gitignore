@@ -2,3 +2,7 @@
 /.ruby-gemset
 
 /Gemfile.lock
+
+/.yardoc/
+/coverage/
+/pkg/
