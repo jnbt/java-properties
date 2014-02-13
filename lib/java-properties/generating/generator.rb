@@ -25,9 +25,9 @@ module JavaProperties
       private
 
       def self.build_line(key, value = '')
-        Encoding.encode!(key.to_s) +
+        Encoding.encode!(key.to_s.dup) +
         KEY_VALUE_SEPARATOR +
-        Encoding.encode!(value.to_s, Encoding::SKIP_SEPARATORS)
+        Encoding.encode!(value.to_s.dup, Encoding::SKIP_SEPARATORS)
       end
     end
   end
