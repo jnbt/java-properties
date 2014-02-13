@@ -22,6 +22,8 @@ module JavaProperties
 
       # Describes a single normalization rule by replacing content
       class Rule
+        # Initializes a new rules base on a matching regexp
+        # and a replacement as substitution
         # @param matcher [Regexp]
         # @param replacement [String]
         def initialize(matcher, replacement = '')

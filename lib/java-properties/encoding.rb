@@ -20,7 +20,7 @@ module JavaProperties
 
     # Encode a given text in place
     # @param text [String]
-    # @param flags Optional flags to skip encoding steps
+    # @param flags [Symbol] Optional flags to skip encoding steps
     # @return [String]
     def self.encode!(text, *flags)
       SpecialChars.encode!(text)  unless flags.include?(SKIP_SPECIAL_CHARS)
@@ -31,7 +31,7 @@ module JavaProperties
     
     # Decodes a given text in place
     # @param text [String]
-    # @param flags Optional flags to skip decoding steps
+    # @param flags [Symbol] Optional flags to skip decoding steps
     # @return [String]
     def self.decode!(text, *flags)
       Unicode.decode!(text)       unless flags.include?(SKIP_UNICODE)

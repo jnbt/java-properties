@@ -9,10 +9,12 @@ module JavaProperties
     #
     module Parser
 
-      # Marker for separation between keys and values
-      # after normalization
+      # Symbol which separates key from value after normalization
       # @return [String]
       KEY_VALUE_MARKER = '='
+      
+      # Symbol which escapes a KEY_VALUE_MARKER in the key name
+      # @return [String]
       KEY_ESCAPE = '\\'
 
       # Marker for a line which only consists of an key w/o value

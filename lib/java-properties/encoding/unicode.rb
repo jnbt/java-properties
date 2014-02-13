@@ -11,12 +11,19 @@ module JavaProperties
       # @return [String]
       UNICODE_ESCAPE = "\\u"
 
+      # Decodes all unicode chars from escape sequences in place
+      # @param text [String]
+      # @return [String]
       def self.decode!(text)
         text.gsub!(UNICODE_MARKER) do
           unicode($1.hex)
         end
+        text
       end
 
+      # Decodes all unicode chars into escape sequences in place
+      # @param text [String]
+      # @return [String]
       def self.encode!(text)
         buffer = StringIO.new
         text.each_char do |char|
