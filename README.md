@@ -11,46 +11,62 @@ A ruby library to read and write [Java properties files](http://en.wikipedia.org
 
 Install via Rubygems
 
-    gem install java-properties
+```bash
+$ gem install java-properties
+```
 
 ... or add to your Gemfile
 
-    gem "java-properties"
+```ruby
+gem "java-properties"
+```
 
 ## Loading files
 
 You can load a valid Java properties file from the file system using a path:
 
-    properties = JavaProperties.load("path/to/my.properties")
-    properties[:foo] # => "bar"
+```ruby
+properties = JavaProperties.load("path/to/my.properties")
+properties[:foo] # => "bar"
+```
 
 If have already the content of the properties file at hand than parse the content as:
 
-    properties = JavaProperties.load("foo=bar")
-    properties[:foo] # => "bar"    
+```ruby
+properties = JavaProperties.load("foo=bar")
+properties[:foo] # => "bar"
+```
 
 ## Writing files
 
 You can write any Hash-like structure as a properties file:
 
-    hash = {:foo => "bar"}
-    JavaProperties.write(hash, "path/to/my.properties")
+```ruby
+hash = {:foo => "bar"}
+JavaProperties.write(hash, "path/to/my.properties")
+```
 
 Or if you want to omit the file you can receive the content directly:
 
-    hash = {:foo => "bar"}
-    JavaProperties.generate(hash)  # => "foo=bar"
+```ruby
+hash = {:foo => "bar"}
+JavaProperties.generate(hash)  # => "foo=bar"
+```
 
 ## Encodings and special chars
 
 As Java properties files normally hold UTF-8 chars in their escaped representation this tool tries to convert them:
 
-    "ה" <=> "\u05d4"
+```
+"ה" <=> "\u05d4"
+```
 
 The tool also escaped every '=', ' ' and ':' in the name part of a property line:
 
-    JavaProperties.generate({"i : like=strange" => "bar"}) 
-    # => "i\ \:\ like\=strange=bar"
+```ruby
+JavaProperties.generate({"i : like=strange" => "bar"}) 
+# => "i\ \:\ like\=strange=bar"
+```
 
 ## Multi line and line breaks
 
@@ -58,12 +74,16 @@ In Java properties files a string can be multi line but line breaks have to be e
 
 Assume the following input:
 
-    my=This is a multi \
-       line content with only \n one line break
+```ini
+my=This is a multi \
+   line content with only \n one line break
+```
 
 The parses would read:
 
-    {:my => "This is a multi line content which only \n one line break"}
+```ruby
+{:my => "This is a multi line content which only \n one line break"}
+```
 
 In the opposite direction line breaks will be correctly escaped but the generator will never use multi line values.
 
