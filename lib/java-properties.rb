@@ -18,10 +18,11 @@ module JavaProperties
 
   # Generates the content of a Java properties file
   # @see Generating::Generator
-  # @param hash [Hash]
+  # @param hash [Hash] 
+  # @param options [Hash] options for the generator
   # @return [String]
-  def self.generate(hash)
-    Generating::Generator.generate(hash)
+  def self.generate(hash, options = {})
+    Generating::Generator.generate(hash, options)
   end
 
   # Loads and parses a Java properties file
@@ -36,8 +37,9 @@ module JavaProperties
   # @see Generating::Generator
   # @param hash [Hash]
   # @param path [String]
-  def self.write(hash, path)
-    File.write(path, generate(hash))
+  # @param options [Hash] options for the generator
+  def self.write(hash, path, options = {})
+    File.write(path, generate(hash, options))
   end
 
 end
