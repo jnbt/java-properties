@@ -4,6 +4,18 @@ require 'java-properties/encoding/unicode'
 
 module JavaProperties
   # Module to encode and decode
+  #
+  # Usage:
+  #    encoded = Encoding.encode!("Some text to be encoded")
+  #    decoded = Encoding.decode!("Some text to be decoded")
+  #
+  # You can disable separate encoding (and decoding) steps,
+  # by passing in additional flags:
+  #
+  # * SKIP_SEPARATORS: Do not code the separators (space,:,=)
+  # * SKIP_UNICODE: Do not code unicode chars
+  # * SKIP_SPECIAL_CHARS: Do not code newlines, tab stops, ...
+  #
   module Encoding
 
     # Flag for skipping separators encodings / decoding
@@ -20,8 +32,8 @@ module JavaProperties
 
     # Encode a given text in place
     # @param text [String]
-    # @param flags [Symbol] Optional flags to skip encoding steps
-    # @return [String]
+    # @param *flags [Array] Optional flags to skip encoding steps
+    # @return [String] The encoded text for chaining
     def self.encode!(text, *flags)
       SpecialChars.encode!(text)  unless flags.include?(SKIP_SPECIAL_CHARS)
       Separators.encode!(text)    unless flags.include?(SKIP_SEPARATORS)
@@ -31,8 +43,8 @@ module JavaProperties
     
     # Decodes a given text in place
     # @param text [String]
-    # @param flags [Symbol] Optional flags to skip decoding steps
-    # @return [String]
+    # @param *flags [Array] Optional flags to skip decoding steps
+    # @return [String] The decoded text for chaining
     def self.decode!(text, *flags)
       Unicode.decode!(text)       unless flags.include?(SKIP_UNICODE)
       Separators.decode!(text)    unless flags.include?(SKIP_SEPARATORS)

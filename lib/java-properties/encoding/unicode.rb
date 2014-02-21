@@ -1,6 +1,7 @@
 module JavaProperties
   module Encoding
     # Module to encode and decode unicode chars
+    # @see JavaProperties::Encoding
     module Unicode
       
       # Marker for encoded unicode chars
@@ -13,7 +14,7 @@ module JavaProperties
 
       # Decodes all unicode chars from escape sequences in place
       # @param text [String]
-      # @return [String]
+      # @return [String] The encoded text for chaining
       def self.decode!(text)
         text.gsub!(UNICODE_MARKER) do
           unicode($1.hex)
@@ -23,7 +24,7 @@ module JavaProperties
 
       # Decodes all unicode chars into escape sequences in place
       # @param text [String]
-      # @return [String]
+      # @return [String] The decoded text for chaining
       def self.encode!(text)
         buffer = StringIO.new
         text.each_char do |char|

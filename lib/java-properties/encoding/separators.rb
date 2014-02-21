@@ -1,6 +1,7 @@
 module JavaProperties
   module Encoding
     # Module to escape separators as : or =
+    # @see JavaProperties::Encoding
     module Separators
 
       # Marker for all separators
@@ -21,7 +22,7 @@ module JavaProperties
 
       # Escapes all not already escaped separators
       # @param text [text]
-      # @return [String]
+      # @return [String] The escaped text for chaining
       def self.encode!(text)
         buffer = StringIO.new
         last_token = ''
@@ -38,7 +39,7 @@ module JavaProperties
 
       # Removes escapes from escaped separators
       # @param text [text]
-      # @return [String]
+      # @return [String] The unescaped text for chaining
       def self.decode!(text)
         text.gsub!(DECODE_SEPARATOR_MARKER) do
           $1

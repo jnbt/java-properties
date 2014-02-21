@@ -1,6 +1,7 @@
 module JavaProperties
   module Encoding
     # Module to escape and unescape special chars
+    # @see JavaProperties::Encoding
     module SpecialChars
 
       # Lookup table for escaping special chars
@@ -22,7 +23,7 @@ module JavaProperties
 
       # Encodes the content a text by escaping all special chars
       # @param text [String]
-      # @return [String]
+      # @return [String] The escaped text for chaining
       def self.encode!(text)
         buffer = StringIO.new
         text.each_char do |char|
@@ -34,7 +35,7 @@ module JavaProperties
 
       # Decodes the content a text by removing all escaping from special chars
       # @param text [String]
-      # @return [String]
+      # @return [String] The unescaped text for chaining
       def self.decode!(text)
         text.gsub!(DESCAPING_MARKER) do |match|
           DESCAPING.fetch(match, match)
