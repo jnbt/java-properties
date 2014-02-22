@@ -5,6 +5,7 @@
 [![Coveralls](http://img.shields.io/coveralls/jnbt/java-properties.png)](https://coveralls.io/r/jnbt/java-properties)
 [![RubyGems](http://img.shields.io/gem/v/java-properties.png)](http://rubygems.org/gems/java-properties)
 [![Gemnasium](http://img.shields.io/gemnasium/jnbt/java-properties.png)](https://gemnasium.com/jnbt/java-properties)
+[![Inline docs](http://inch-pages.github.io/github/jnbt/java-properties.png)](https://inch-pages.github.io/github/jnbt/java-properties)
 
 A ruby library to read and write [Java properties files](http://en.wikipedia.org/wiki/.properties).
 
