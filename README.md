@@ -1,11 +1,11 @@
 # JavaProperties
 
-[![Build Status](http://img.shields.io/travis/jnbt/java-properties.png)](https://travis-ci.org/jnbt/jnbt/java-properties)
-[![Code Climate](http://img.shields.io/codeclimate/github/jnbt/java-properties.png)](https://codeclimate.com/github/jnbt/java-properties)
-[![Coveralls](http://img.shields.io/coveralls/jnbt/java-properties.png)](https://coveralls.io/r/jnbt/java-properties)
-[![RubyGems](http://img.shields.io/gem/v/java-properties.png)](http://rubygems.org/gems/java-properties)
-[![Gemnasium](http://img.shields.io/gemnasium/jnbt/java-properties.png)](https://gemnasium.com/jnbt/java-properties)
-[![Inline docs](http://inch-ci.org/github/jnbt/java-properties.png)](http://inch-ci.org/github/jnbt/java-properties)
+[![Build Status](http://img.shields.io/travis/jnbt/java-properties.svg)](https://travis-ci.org/jnbt/jnbt/java-properties)
+[![Code Climate](http://img.shields.io/codeclimate/github/jnbt/java-properties.svg)](https://codeclimate.com/github/jnbt/java-properties)
+[![Coveralls](http://img.shields.io/coveralls/jnbt/java-properties.svg)](https://coveralls.io/r/jnbt/java-properties)
+[![RubyGems](http://img.shields.io/gem/v/java-properties.svg)](http://rubygems.org/gems/java-properties)
+[![Gemnasium](http://img.shields.io/gemnasium/jnbt/java-properties.svg)](https://gemnasium.com/jnbt/java-properties)
+[![Inline docs](http://inch-ci.org/github/jnbt/java-properties.svg?style=shields)](http://inch-ci.org/github/jnbt/java-properties)
 
 A ruby library to read and write [Java properties files](http://en.wikipedia.org/wiki/.properties).
 
