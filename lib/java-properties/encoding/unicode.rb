@@ -3,7 +3,7 @@ module JavaProperties
     # Module to encode and decode unicode chars
     # @see JavaProperties::Encoding
     module Unicode
-      
+
       # Marker for encoded unicode chars
       # @return [Regexp]
       UNICODE_MARKER  = /\\[uU]([0-9a-fA-F]{4,5}|10[0-9a-fA-F]{4})/
@@ -42,18 +42,14 @@ module JavaProperties
       private
 
       def self.unicode(code)
-        [code].pack("U")
+        code.chr(::Encoding::UTF_8)
       end
 
       def self.hex(codepoint)
         hex  = codepoint.to_s(16)
-        size = hex.size
-        # padding the hex value for uneven digest
-        if (size % 2) == 1
-          "0#{hex}"
-        else
-          hex
-        end
+        size = [4, hex.size].max
+        target_size = size.even? ? size : size+1
+        hex.rjust(target_size, '0')
       end
 
     end
