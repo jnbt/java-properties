@@ -1,6 +1,6 @@
 # JavaProperties
 
-[![Build Status](http://img.shields.io/travis/jnbt/java-properties.svg)](https://travis-ci.org/jnbt/jnbt/java-properties)
+[![Build Status](http://img.shields.io/travis/jnbt/java-properties.svg)](https://travis-ci.org/jnbt/java-properties)
 [![Code Climate](http://img.shields.io/codeclimate/github/jnbt/java-properties.svg)](https://codeclimate.com/github/jnbt/java-properties)
 [![Coveralls](http://img.shields.io/coveralls/jnbt/java-properties.svg)](https://coveralls.io/r/jnbt/java-properties)
 [![RubyGems](http://img.shields.io/gem/v/java-properties.svg)](http://rubygems.org/gems/java-properties)
