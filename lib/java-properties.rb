@@ -30,7 +30,9 @@ module JavaProperties
   # @param path [String]
   # @return [Properties]
   def self.load(path)
-    parse(File.read(path))
+    File.open(path, "r:bom|utf-8") do |f|
+      parse(f.read)
+    end
   end
 
   # Generates a Java properties file
