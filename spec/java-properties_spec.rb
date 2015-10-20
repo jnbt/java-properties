@@ -29,6 +29,15 @@ describe JavaProperties do
     end
   end
 
+  it "loads from data starting with a BOM" do
+    properties = subject.load(fixture_path("bom.properties"))
+    expected = {
+      :pageTitle => "Some ü text",
+      :tagOther => "Other"
+    }
+    properties.must_equal(expected)
+  end
+
   private
 
   def with_temp_file(&block)

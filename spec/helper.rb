@@ -15,7 +15,10 @@ require 'java-properties'
 class Minitest::Spec
 
   def fixture(*segments)
-    File.read(File.join(File.dirname(__FILE__), "fixtures", *segments))
+    File.read(fixture_path(*segments))
   end
 
+  def fixture_path(*segments)
+    File.join(File.dirname(__FILE__), "fixtures", *segments)
+  end
 end
