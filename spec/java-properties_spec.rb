@@ -1,3 +1,4 @@
+# coding: utf-8
 require 'helper'
 
 describe JavaProperties do
@@ -21,7 +22,7 @@ describe JavaProperties do
   end
 
   it "writes to file" do
-    with_temp_file do |file|      
+    with_temp_file do |file|
       subject.write({:item1 => "item1"}, file.path)
 
       file.rewind
