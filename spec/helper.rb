@@ -15,7 +15,7 @@ require 'java-properties'
 class Minitest::Spec
 
   def fixture(*segments)
-    File.read(fixture_path(*segments))
+    File.read(fixture_path(*segments)).strip
   end
 
   def fixture_path(*segments)
