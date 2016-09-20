@@ -4,9 +4,9 @@ require 'helper'
 describe JavaProperties::Encoding::Unicode do
   subject{ JavaProperties::Encoding::Unicode }
 
-  let(:encoded) { 'this is some \u0024 text \U05D4 with unicode \u00fc' }
-  let(:encoded_normalized) { 'this is some $ text \u05d4 with unicode \u00fc' }
-  let(:decoded) { 'this is some $ text ה with unicode ü' }
+  let(:encoded) { 'this is some \u0024 text \U05D4 with unicode \u00fc a\u00e4b' }
+  let(:encoded_normalized) { 'this is some $ text \u05d4 with unicode \u00fc a\u00e4b' }
+  let(:decoded) { 'this is some $ text ה with unicode ü aäb' }
 
   it "decodes unicode chars" do
     subject.decode!(encoded.dup).must_equal decoded

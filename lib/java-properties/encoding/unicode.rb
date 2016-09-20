@@ -6,7 +6,7 @@ module JavaProperties
 
       # Marker for encoded unicode chars
       # @return [Regexp]
-      UNICODE_MARKER  = /\\[uU]([0-9a-fA-F]{4,5}|10[0-9a-fA-F]{4})/
+      UNICODE_MARKER  = /\\[uU]([0-9a-fA-F]{4}|10[0-9a-fA-F]{4})/
 
       # Escape char for unicode chars
       # @return [String]
