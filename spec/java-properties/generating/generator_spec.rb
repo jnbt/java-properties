@@ -16,7 +16,8 @@ describe JavaProperties::Generating::Generator do
       :item7 => "line 1 line 2 line 3",
       :item8 => "line 1 line 2 line 3",
       :item9 => "line 1 line 2 line 3",
-      :item10 => "test\n\ttestה test\n\ttest test\n\ttestü = test"
+      :item10 => "test\n\ttestה test\n\ttest test\n\ttestü = test",
+      :item11 => "aäb 𪀯"
     }
   end
 

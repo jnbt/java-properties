@@ -61,6 +61,7 @@ As Java properties files normally hold UTF-8 chars in their escaped representati
 
 ```
 "ה" <=> "\u05d4"
+"𪀯"  <=> "\ud868\udc2f"
 ```
 
 The tool also escaped every '=', ' ' and ':' in the name part of a property line:
