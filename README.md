@@ -35,7 +35,7 @@ properties[:foo] # => "bar"
 If have already the content of the properties file at hand than parse the content as:
 
 ```ruby
-properties = JavaProperties.load("foo=bar")
+properties = JavaProperties.parse("foo=bar")
 properties[:foo] # => "bar"
 ```
 
