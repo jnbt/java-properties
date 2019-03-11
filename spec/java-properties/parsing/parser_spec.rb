@@ -16,7 +16,8 @@ describe JavaProperties::Parsing::Parser do
       :item8 => "line 1 line 2 line 3",
       :item9 => "line 1 line 2 line 3",
       :item10 => "test\n\ttestP test\n\ttest test\n\ttest = test",
-      :item11 => "aäb 𪀯"
+      :item11 => "aäb 𪀯",
+      :item12 => "#no comment",
     }
   end
 
