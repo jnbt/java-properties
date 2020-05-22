@@ -18,6 +18,7 @@ describe JavaProperties::Parsing::Parser do
       :item10 => "test\n\ttestP test\n\ttest test\n\ttest = test",
       :item11 => "aäb 𪀯",
       :item12 => "#no comment",
+      :item13 => "with\\back\\nslash\\t",
     }
   end
 

@@ -10,7 +10,8 @@ module JavaProperties
         "\t" => '\\t',
         "\r" => '\\r',
         "\n" => '\\n',
-        "\f" => '\\f'
+        "\f" => '\\f',
+        "\\" => '\\\\',
       }.freeze
 
       # Lookup table to remove escaping from special chars
