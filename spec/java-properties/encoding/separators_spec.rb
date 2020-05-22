@@ -8,12 +8,12 @@ describe JavaProperties::Encoding::Separators do
 
   it "encodes separators" do
     processed = subject.encode!(raw.dup)
-    processed.must_equal encoded
+    _(processed).must_equal encoded
   end
 
   it "decodes separators" do
     processed = subject.decode!(encoded.dup)
-    processed.must_equal raw_normalizd
+    _(processed).must_equal raw_normalizd
   end
 
 end

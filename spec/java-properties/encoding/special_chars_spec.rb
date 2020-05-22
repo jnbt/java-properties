@@ -7,17 +7,17 @@ describe JavaProperties::Encoding::SpecialChars do
 
   it "encodes special chars" do
     processed = subject.encode!(raw.dup)
-    processed.must_equal encoded
+    _(processed).must_equal encoded
   end
 
   it "deencodes special chars" do
     processed = subject.decode!(encoded.dup)
-    processed.must_equal raw
+    _(processed).must_equal raw
   end
 
   it "decodes and encodes to the same" do
     encoded  = subject.encode!(raw.dup)
     deconded = subject.decode!(encoded)
-    deconded.must_equal raw
+    _(deconded).must_equal raw
   end
 end
