@@ -9,30 +9,30 @@ describe JavaProperties::Encoding::Unicode do
   let(:decoded) { 'this is some $ text ה with unicode ü aäb 𪀯' }
 
   it "decodes unicode chars" do
-    subject.decode!(encoded.dup).must_equal decoded
+    _(subject.decode!(encoded.dup)).must_equal decoded
   end
 
   it "encodes unicode chars" do
-    subject.encode!(decoded.dup).must_equal encoded_normalized
+    _(subject.encode!(decoded.dup)).must_equal encoded_normalized
   end
 
   it "encodes unicode chars but has 2-based hex size, padded to at least 4" do
-    subject.encode!("ü").must_equal '\u00fc'
-    subject.encode!("ה").must_equal '\u05d4'
-    subject.encode!("ᘓ").must_equal '\u1613'
+    _(subject.encode!("ü")).must_equal '\u00fc'
+    _(subject.encode!("ה")).must_equal '\u05d4'
+    _(subject.encode!("ᘓ")).must_equal '\u1613'
   end
 
   it "decodes unicode chars based on 4 hexdigest" do
-    subject.decode!('a\u00e4b').must_equal "aäb"
+    _(subject.decode!('a\u00e4b')).must_equal "aäb"
   end
 
   it "decodes unicode chars over multiple chunks" do
-    subject.decode!('\ud868\udc2f').must_equal "𪀯"
+    _(subject.decode!('\ud868\udc2f')).must_equal "𪀯"
   end
 
   it "decodes and encodes" do
     encoded  = subject.encode!(decoded.dup)
     dec = subject.decode!(encoded.dup)
-    dec.must_equal decoded
+    _(dec).must_equal decoded
   end
 end

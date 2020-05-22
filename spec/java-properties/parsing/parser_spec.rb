@@ -26,9 +26,9 @@ describe JavaProperties::Parsing::Parser do
     properties = subject.parse(content)
 
     # don't compare the hashes directly, as this hard to debug
-    properties.keys.must_equal as_hash.keys
+    _(properties.keys).must_equal as_hash.keys
     properties.each do |key, value|
-      value.must_equal as_hash[key]
+      _(value).must_equal as_hash[key]
     end
   end
 

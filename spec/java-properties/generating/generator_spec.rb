@@ -24,25 +24,25 @@ describe JavaProperties::Generating::Generator do
   it "generates properties file content" do
     expected = fixture("test_out.properties")
     content  = subject.generate(as_hash)
-    content.must_equal expected
+    _(content).must_equal expected
   end
 
   it "generates properties file content but skips unicode encoding" do
     expected = fixture("test_out_skip_unicode.properties")
     content  = subject.generate(as_hash, :skip_encode_unicode => true)
-    content.must_equal expected
+    _(content).must_equal expected
   end
 
   it "generates properties file content but skips separators encoding" do
     expected = fixture("test_out_skip_separators.properties")
     content  = subject.generate(as_hash, :skip_encode_separators => true)
-    content.must_equal expected
+    _(content).must_equal expected
   end
 
   it "generates properties file content but skips special chars encoding" do
     expected = fixture("test_out_skip_special_chars.properties")
     content  = subject.generate(as_hash, :skip_encode_special_chars => true)
-    content.must_equal expected
+    _(content).must_equal expected
   end
 
 end

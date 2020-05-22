@@ -5,11 +5,11 @@ describe JavaProperties do
   subject{ JavaProperties }
 
   it "parses from string" do
-    subject.parse("item1=item1").must_equal({:item1 => "item1"})
+    _(subject.parse("item1=item1")).must_equal({:item1 => "item1"})
   end
 
   it "generates from hash" do
-    subject.generate({:item1 => "item1"}).must_equal("item1=item1")
+    _(subject.generate({:item1 => "item1"})).must_equal("item1=item1")
   end
 
   it "loads from file" do
@@ -17,7 +17,7 @@ describe JavaProperties do
       file << "item1=item1"
       file.flush
 
-      subject.load(file.path).must_equal({:item1 => "item1"})
+      _(subject.load(file.path)).must_equal({:item1 => "item1"})
     end
   end
 
@@ -26,7 +26,7 @@ describe JavaProperties do
       subject.write({:item1 => "item1"}, file.path)
 
       file.rewind
-      file.read.must_equal "item1=item1"
+      _(file.read).must_equal "item1=item1"
     end
   end
 
@@ -36,7 +36,7 @@ describe JavaProperties do
       :pageTitle => "Some ü text",
       :tagOther => "Other"
     }
-    properties.must_equal(expected)
+    _(properties).must_equal(expected)
   end
 
   private
