@@ -1,10 +1,9 @@
 # JavaProperties
 
-[![Build Status](http://img.shields.io/travis/jnbt/java-properties.svg)](https://travis-ci.org/jnbt/java-properties)
-[![Code Climate](http://img.shields.io/codeclimate/github/jnbt/java-properties.svg)](https://codeclimate.com/github/jnbt/java-properties)
-[![Coveralls](http://img.shields.io/coveralls/jnbt/java-properties.svg)](https://coveralls.io/r/jnbt/java-properties)
-[![RubyGems](http://img.shields.io/gem/v/java-properties.svg)](http://rubygems.org/gems/java-properties)
-[![Gemnasium](http://img.shields.io/gemnasium/jnbt/java-properties.svg)](https://gemnasium.com/jnbt/java-properties)
+[![Build Status](http://img.shields.io/travis/jnbt/java-properties)](https://travis-ci.org/jnbt/java-properties)
+[![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/jnbt/java-properties)](https://codeclimate.com/github/jnbt/java-properties)
+[![Coveralls](http://img.shields.io/coveralls/jnbt/java-properties)](https://coveralls.io/r/jnbt/java-properties)
+[![RubyGems](http://img.shields.io/gem/v/java-properties)](http://rubygems.org/gems/java-properties)
 [![Inline docs](http://inch-ci.org/github/jnbt/java-properties.svg?style=shields)](http://inch-ci.org/github/jnbt/java-properties)
 
 A ruby library to read and write [Java properties files](http://en.wikipedia.org/wiki/.properties).
@@ -67,13 +66,13 @@ As Java properties files normally hold UTF-8 chars in their escaped representati
 The tool also escaped every '=', ' ' and ':' in the name part of a property line:
 
 ```ruby
-JavaProperties.generate({"i : like=strange" => "bar"}) 
+JavaProperties.generate({"i : like=strange" => "bar"})
 # => "i\ \:\ like\=strange=bar"
 ```
 
 ## Multi line and line breaks
 
-In Java properties files a string can be multi line but line breaks have to be escaped. 
+In Java properties files a string can be multi line but line breaks have to be escaped.
 
 Assume the following input:
 
