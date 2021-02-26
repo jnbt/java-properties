@@ -4,9 +4,10 @@ rvm:
   - 2.5
   - 2.6
   - 2.7
+  - 3.0
   - ruby-head
 before_install:
-  - gem install bundler:2.1.4
+  - gem install bundler:2.2.11
 matrix:
   allow_failures:
     - rvm: ruby-head
