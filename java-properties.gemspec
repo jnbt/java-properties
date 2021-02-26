@@ -1,7 +1,6 @@
-# coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'java-properties/version'
+# frozen_string_literal: true
+
+require_relative 'lib/java-properties/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'java-properties'
@@ -19,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.test_files = Dir.glob('spec/fixtures/**/*.properties')
 
   spec.required_rubygems_version = '>= 1.3.5'
-  spec.required_ruby_version = '~> 2.0'
+  spec.required_ruby_version = '>= 2.0.0'
 
   spec.add_development_dependency 'rake', '~> 13.0'
   spec.add_development_dependency 'inch', '~> 0.8'
