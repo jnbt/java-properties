@@ -1,8 +1,8 @@
 # JavaProperties
 
-[![Build Status](http://img.shields.io/travis/jnbt/java-properties)](https://travis-ci.org/jnbt/java-properties)
+[![Build Status](https://github.com/jnbt/java-properties/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/jnbt/java-properties/actions?query=branch%3Amaster)
 [![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/jnbt/java-properties)](https://codeclimate.com/github/jnbt/java-properties)
-[![Coveralls](http://img.shields.io/coveralls/jnbt/java-properties)](https://coveralls.io/r/jnbt/java-properties)
+[![Coverage Status](https://coveralls.io/repos/github/jnbt/java-properties/badge.svg?branch=master)](https://coveralls.io/github/java-properties/linr?branch=master)
 [![RubyGems](http://img.shields.io/gem/v/java-properties)](http://rubygems.org/gems/java-properties)
 [![Inline docs](http://inch-ci.org/github/jnbt/java-properties.svg?style=shields)](http://inch-ci.org/github/jnbt/java-properties)
 
