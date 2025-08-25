@@ -24,5 +24,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'inch', '~> 0.8'
   spec.add_development_dependency 'minitest', '~> 5.14'
   spec.add_development_dependency 'simplecov', '~> 0.18.0'
-  spec.add_development_dependency 'simplecov-lcov', '~> 0.8.0'
+  spec.add_development_dependency 'simplecov-lcov', '~> 0.9.0'
 end
